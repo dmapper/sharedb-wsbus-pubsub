@@ -44,7 +44,7 @@ WsBusPubSub.prototype._unsubscribe = function (channel, callback) {
 
 WsBusPubSub.prototype._publish = function (channels, data, callback) {
   process.nextTick(() => {
-    for (let channel of channels.length) {
+    for (let channel of (channels || [])) {
       if (this.subscribed[channel]) {
         this.client.publish(channel, data)
       }
