@@ -1,11 +1,11 @@
 {
   "name": "sharedb-wsbus-pubsub",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "repository":{
+  "repository": {
     "type": "git",
     "url": "git://github.com/dmapper/sharedb-wsbus-pubsub.git"
   },
