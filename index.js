@@ -2,10 +2,10 @@ const bus = require('ws-bus')
 const PubSub = require('sharedb').PubSub
 
 function WsBusPubSub (url, protocols, options = {}) {
-  if (!(this instanceof WsBusPubSub)) return new WsBusPubSub(options)
+  if (!(this instanceof WsBusPubSub)) return new WsBusPubSub(url, protocols, options)
   PubSub.call(this, options)
 
-  this.client = bus.createClient()
+  this.client = bus.createClient(url, protocols, options)
 }
 
 module.exports = WsBusPubSub
