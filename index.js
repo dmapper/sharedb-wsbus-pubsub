@@ -47,6 +47,7 @@ WsBusPubSub.prototype._publish = function (channels, data, callback) {
     for (let channel of (channels || [])) {
       if (this.subscribed[channel]) {
         this.client.publish(channel, data)
+        this._emit(channel, data)
       }
     }
     if (callback) callback()
